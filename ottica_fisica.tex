@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage[a4paper, total={15cm, 25cm}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Ottica Fisica}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+
+
+\section*{Ottica Geometrica}
+\subsubsection*{Principio di Fermat}
+Il raggio è la traiettoria che la luce percorre con minor tempo di percorrenza.\\
+Legge di trasformazione dei raggi:
+\begin{equation}	\label{eq:legge_di_trasf_dei_raggi}
+n_1 \sin\theta_i - n_2 \sin\theta_t = 0
+\end{equation}
+La quale è simile alla legge di Snell ma, per come è stata ricavata, la \eqref{eq:legge_di_trasf_dei_raggi} non si limita ad un'onda incidente su una superficie piatta ma include qualsiasi geometria dell'interfaccia.
+
+\subsubsection*{Immagine reale e immagine virtuale}
+Si ha un'immagine reale quando i raggi che giungono al sensore provengono da un punto che coincide con la posizione dell'oggetto stesso. Nel caso in cui il punto dove convergono i raggi non sia quello dove l'oggetto è posizionato allora si parla di immagine virtuale.
+
+\subsection*{Superfici cartesiane}
+$\cdots$
+
+\subsection*{Regime parassiale}
+Il regime parassiale consiste nel considerare solo raggi incidenti il sistema ottico con angoli molto piccoli rispetto all'asse di quest'ultimo.\\
+Con questa approssimazione possiamo associare una relazione lineare tra la posizione e l'angolo di entrata e uscita del raggio nel e dal sistema ottico.\\
+Questa relazione è scrivibile sotto forma di matrice del tipo:
+\[
+\begin{bmatrix}
+y_1\\
+\alpha_1
+\end{bmatrix}
+=
+\begin{bmatrix}
+A	&	B\\
+C	&	D
+\end{bmatrix}
+\begin{bmatrix}
+y_0\\
+\alpha_0
+\end{bmatrix}
+\]
+
+\subsubsection*{Matrice di propagazione libera}
+Nel caso in cui il sistema ottico non contenga nessun elemento ottico, allora si ha una propagazione libera del raggio su un percorso $L$.
+\[
+\begin{bmatrix}
+y_1\\
+\alpha_1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1	&	L\\
+0	&	1
+\end{bmatrix}
+\begin{bmatrix}
+y_0\\
+\alpha_0
+\end{bmatrix}
+\]
+
+\subsubsection*{Matrice per superfici sferiche}
+\[
+\begin{bmatrix}
+y_1\\
+\alpha_1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1	&	0\\
+\frac{1}{R}(\frac{n}{n'}-1)	&	\frac{n}{n'}
+\end{bmatrix}
+\begin{bmatrix}
+y_0\\
+\alpha_0
+\end{bmatrix}
+\]
+Questa relazione vale per qualsiasi superfice sferica di raggio $R$ sia essa concava o caonvessa. Se la superficie è convessa (se C si trova a destra del vertice V) R è assunto positivo altrimenti negativo.
+
+\subsubsection*{Generalizzazione dei sistemi ottici}
+Il concetto di sistema ottico è stato introdotto per semplificare l'analisi di sistemi con elementi ottici numerosi. Associando ad ogni elemento ottico la sua matrice $M_i$ è possibile ricavare la matrice di trasferimento $M$ totale, detta anche diottro sferico, che relaziona entrata e uscita dei raggi da tutti i sistemi ottici come se fosse uno solo.
+\[
+\begin{bmatrix}
+y_N\\
+\alpha_N
+\end{bmatrix}
+=
+M_N M_{N-1} \cdots M_2 M_1
+\begin{bmatrix}
+y_0\\
+\alpha_0
+\end{bmatrix}
+\]
+Osservazione:
+Da notare che la moltiplicazione delle matrici segue il verso opposto (da destra a sinistra) del percorso del raggio (da sinistra a destra).\\
+Osservazione:
+Durante la risoluzione degli esercizi può essere opportuno verificare il calcolo della matrice $M$ calcolandone il determinante. Infatti deve essere:
+\begin{equation*}
+\det M = \frac{n_0}{n_f}
+\end{equation*}
+Con $n_0$ indice di rifrazione del mezzo da cui parte il raggio e $n_f$ indice di rifrazione del mezzo in cui arriva il raggio.
+
+\subsubsection*{Proprietà della matrice di trasferimento}
+$D = 0$\\
+$A = 0$\\
+$B = 0$\\
+\centerline{$A = \frac{y_f}{y_0}$ \qquad ingrandimento del sistema ottico}
+$C = 0$\\
+\centerline{$D = \frac{\alpha_f}{\alpha_0}$	\qquad ingrandimento angolare}
+
+
+\section*{Ottica Diffrattiva}
+\end{document}
