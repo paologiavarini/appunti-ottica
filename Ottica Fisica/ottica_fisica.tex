@@ -11,8 +11,45 @@
 \begin{document}
 \maketitle
 
+\subsection*{Equazione di Helmholtz}
+Dalle equazioni di Maxwell per un mezzo dielettrico omogeneo si ottiene la relazione:
+\begin{equation} \label{eq:equazione_onde_mezzo}
+c^2\nabla^2 \overrightarrow{E} = \frac{\partial^2 E}{\partial t^2} + \frac{1}{\epsilon_0} \frac{\partial^2 \overrightarrow{P}(\overrightarrow{E})}{\partial t^2}
+\end{equation}
+Per mezzi lineari, tra $E$ e $P$ si ha la sequente relazione:
+\begin{equation*}
+\overrightarrow{P} = \epsilon_0 \chi \overrightarrow{E}
+\end{equation*}
+Passiamo ora nel dominio delle frequenze per semplificare le operazioni di derivazione nella \eqref{eq:equazione_onde_mezzo} per ottenere l'equazione di Helmholtz:
+\begin{equation}	\label{eq:equazione_helmholtz}
+\nabla^2 \overrightarrow{\tilde{E}}(\overrightarrow{r}) + \left(\frac{\omega}{c}\right)^2 \frac{\epsilon(\omega)}{\epsilon_0} \overrightarrow{\tilde{E}}(\overrightarrow{r}) = 0
+\end{equation}
+Questa equazione impone una condizione sulla parte spaziale del campo elettrico. La parte temporale è contenuta all'interno del termine $\epsilon(\omega)$ per mezzi omogenei e lineari.\\
+\\
+La forma generale dell'equazione di Helmholtz è la sequente:
+\begin{equation} 	\label{eq:equzione_generale_helmholtz}
+\nabla^2 F + k^2 F = 0
+\end{equation}
+con $k$ vettore d'onda.\\
+\\
+Quindi dalla \eqref{eq:equazione_helmholtz} e dalla \eqref{eq:equzione_generale_helmholtz} si ha la relazione:
+\begin{equation*}
+k = \frac{\omega}{c} \sqrt{\frac{\epsilon(\omega)}{\epsilon_0}}
+\end{equation*}
+chiamata anche relazione di dispersione.\\
+\\
+\\
+In conclusione, passando all'equazione di Helmholtz si ricavano ulteriori informazioni riguardo le onde, ma si perde la relazione tra campo elettrico e campo magnetico. Siccome le onde devono sottostare anche alle equazioni di Maxwell, è sufficente reintrodurre $B$ di modo da ottenere che:
+\begin{equation*}
+\overrightarrow{B} = \frac{1}{\omega} \overrightarrow{k} \times \overrightarrow{E}
+\end{equation*}
 
+\vfill
+\hrule
+\subsubsection*{Extra:}
+\href{https://physics.stackexchange.com/questions/334084/wave-vs-helmholtz-equation}{More on Helmholtz's equation...}\\
 
+\newpage
 
 \section*{Ottica Geometrica}
 \subsubsection*{Principio di Fermat}
@@ -116,6 +153,7 @@ $B = 0$\\
 $C = 0$\\
 \centerline{$D = \frac{\alpha_f}{\alpha_0}$	\qquad ingrandimento angolare}
 
+\newpage
 
 \section*{Ottica Diffrattiva}
 \end{document}
