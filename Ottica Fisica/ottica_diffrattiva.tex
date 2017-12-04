@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage[charter]{mathdesign}
+\usepackage[italian]{babel}
+
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{esint}
+
+\title{OTTICA DIFFRATTIVA}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+Lavoriamo sempre con le equazioni di Maxwell facendo un analisi in frequenza.
+\begin{equation}
+\textbf{E}(\textbf{r}, t)= \textbf{E}(\textbf{r}) e^{-i \omega t}
+\end{equation}
+
+\begin{equation}
+\nabla^2 \textbf{E} (\textbf{r}) + \left(\frac{\omega}{c}\right)^2 \frac{2}{\varepsilon} \textbf{E} (\textbf{r})=0
+\end{equation}
+
+\textbf{Si potrebbe risolvere l'equazione di Helmholtz con le appropriate condizioni al contorno, ma non è facile quindi si deve cercare una seconda via.}
+
+Analizziamo ad esempio un fronte d'onda piana che si propaga attraverso un apertura:
+
+%immagine%
+ se usassimo ancora l'ottica geometrica troveremmo che passano solo i raggi centrali mentre gli altri no.
+
+
+Se l'apertura è molto grande rispetto alla lunghezza d'onda le deflessioni sono meno evidenti e il fronte d'onda è ancora praticamente piano. se però riduciamo l'apertura questa approssimazione non è più accettabile.
+
+Andremo a studiare il sistema per aperture abbastanza piccole da avere diffrazione evidente, ma sufficientemente grande da non variare la polarizzazione del campo entrante lasciando l'equazione di Helmholtz scalare(NON FARLA DIVENTARE VETTORIALE)
+
+\section*{Ottica Rifrattiva in Regime Scalare}
+Ipotizziamo di essere nel vuoto:
+\begin{equation}
+\varepsilon = \varepsilon_0
+\end{equation}
+chiamo il campo elettrico U(P) anziché \textbf{E} (\textbf{r}) 		(Metto in evidenza il fatto di essere scalare)
+
+\begin{equation}
+\nabla^2 U(P) + \left(\frac{\omega}{c}\right)^2 \frac{2}{\varepsilon _0}U(P)=0
+\end{equation}
+
+Nell'ottica diffrattiva studiamo tutto ciò che ha dimensione finita 
+
+
+%IMMAGINI%
+
+prendiamo un sistema con apertura di forma non definita attraverso la quale passa un onda polarizzata linearmente: come sarà il campo dopo l'apertura?
+
+\textbf{Devo risolvere l'equazione di Helmholtz con le apposite condizioni al contorno. dovrò quindi usare le funzioni di Green} 
+
+%cenni sulle funzioni di green%
+
+
+a formulare la seguente equazione son Kirchhoff, Rayleigh, Sommerfeld
+
+\begin{equation}
+U(P_0) = \frac{1}{i\lambda} \iint_\sigma U(P_1) \frac{e^{i k r_{01}}}{r_{01}} \cos(\textbf{n}, \textbf{r}) dS
+\end{equation}
+
+%r dovrebbe avere il pecide 01 ma caffacnuclo%
+\begin{equation}
+k = \frac{\omega}{c}  = \frac{2\pi}{\lambda}
+\end{equation}
+
+Esiste una strada alternativa che risulta solo dopo avere visto la soluzione di Rayleigh-Sommerfeld: \textbf{da un punto di vista matematico ci accorgiamo di avere in mano delle onde sferiche}
+
+Si tratta di un potente artificio matematico che scompone il campo nella sovrapposizione di tante funzioni elementari.
+
+Scriveremo il campo di partenza come somma di un set di onde semplici la cui sovrapposizione alla fine ci garantisce di trovare il campo complessivo
+
+
+
+\end{document}
