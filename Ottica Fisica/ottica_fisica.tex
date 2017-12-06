@@ -5,7 +5,12 @@
 \usepackage[italian]{babel}
 
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{hyperref} 
+\usepackage{graphicx}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Osservazione} 
 
 \title{Ottica Fisica}
 \author{}
@@ -158,50 +163,78 @@ Con $n_0$ indice di rifrazione del mezzo da cui parte il raggio e $n_f$ indice d
 \begin{itemize}
 \item $D = 0$
 \end{itemize}
+\begin{minipage}{.5\textwidth}
 \[
 \begin{cases}
 y_f = Ay_0 + B\alpha_0\\
 \alpha_f = Cy_0
 \end{cases}
 \]
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+	\centering
+    \includegraphics[height=4cm]{images/d_nullo}
+\end{minipage}
 I raggi finali avranno altezza diversa ma l'angolo con cui escono è lo stesso (raggi paralleli tra loro).
 \begin{itemize}
 \item $A = 0$
 \end{itemize}
+\begin{minipage}{.5\textwidth}
 \[
 \begin{cases}
 y_f = B\alpha_0\\
 \alpha_f = Cy_0 + D\alpha_0
 \end{cases}
 \]
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+	\centering
+    \includegraphics[height=4cm]{images/a_nullo}
+\end{minipage}
 In ingresso si hanno raggi con stesso angolo $\alpha_0$ (paralleli) ma diversa altezza $y_0$.\\
 In uscita li trovo tutti nello stesso punto ad altezza $y_f$.
 \begin{itemize}
 \item $B = 0$
 \end{itemize}
+\begin{minipage}{.5\textwidth}
 \[
 \begin{cases}
 y_f = Ay_0\\
 \alpha_f = Cy_0 + D\alpha_0
 \end{cases}
 \]
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+	\centering
+    \includegraphics[height=4cm]{images/b_nullo}
+\end{minipage}
 Tutti i raggi che entrano ad $y_0$ escono ad $y_f$.\\
 Ci sono due piani coniugati del sistema ottico: ogni punto ad altezza $y_0$ genera un punto a $y_f$.\\
 \centerline{$A = \frac{y_f}{y_0}$ \qquad ingrandimento del sistema ottico}
 \begin{itemize}
 \item $C = 0$
 \end{itemize}
+\begin{minipage}{.5\textwidth}
 \[
 \begin{cases}
 y_f = Ay_0 + B\alpha_0\\
 \alpha_f = D\alpha_0
 \end{cases}
 \]
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+	\centering
+    \includegraphics[height=4cm]{images/c_nullo}
+\end{minipage}
 Tutti i raggi paralleli in entrata avranno raggi paralleli anche in uscita.\\
 \centerline{$D = \frac{\alpha_f}{\alpha_0}$	\qquad ingrandimento angolare}
 
 \subsection*{Punti cardinali}
-Per un qualsiasi sistema ottico è possibile fare un'analisi riducendolo ad una semplice lente spessa o diottroOttica. Per fare ciò definiamo dei punti cardinali che utilizzeremo per effettuare la suddetta analisi.\\
+Per un qualsiasi sistema ottico è possibile fare un'analisi riducendolo ad una semplice lente spessa o diottro. Per fare ciò definiamo dei punti cardinali che utilizzeremo per effettuare la suddetta analisi.\\
+\begin{figure}[h]
+\centering
+\includegraphics[height=4cm]{images/lente_spessa}
+\end{figure}
 \\
 Distanza tra il piano focale $F_1$ e il piano principale $PP_1$:
 \begin{equation*}
@@ -229,7 +262,8 @@ Distanza del punto nodale $N_2$ da $PP_2$:
 \begin{equation*}
 w = \frac{-A}{C}
 \end{equation*}
-Osservazione: nel caso in cui $n_0 = n_f$ si ha che:
+\begin{remark}
+nel caso in cui $n_0 = n_f$ si ha che:
 \begin{equation*}
 f_2 = - \frac{1}{C} = - f_1 \qquad \|f_1\| = f_2
 \end{equation*}
@@ -240,6 +274,7 @@ Inoltre coincidono i punti principali (intersezione tra piani principali PP e as
 \begin{equation*}
 H_1 \equiv N_1 \qquad H_2 \equiv N_2
 \end{equation*}
+\end{remark}
 In conclusione, conoscendo la matrice di trasferimento è possibile ricavare tutte le distanze e i punti cardinali.
 \newpage
 
