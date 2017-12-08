@@ -1,49 +1,50 @@
 \documentclass{article}
-
-\usepackage[charter]{mathdesign}
-\usepackage[italian]{babel}
-
+\usepackage[utf8]{inputenc}
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{esint}
-
-\title{OTTICA DIFFRATTIVA}
-\author{}
-\date{}
-
+\usepackage[charter]{mathdesign}
+\usepackage{hyperref} 
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
 \begin{document}
-\maketitle
+\title{OTTICA DIFFRATTIVA}
+
+%DIFFERENZA TRA APPROSSIMAZIONE PARASSIALE E FRAUNHOFER%
+
+\href{https://www.youtube.com/watch?v=8Ep_aPSrwYI}{Video spiegazione parte iniziale}.  %<--------------------------------%
+
 
 Lavoriamo sempre con le equazioni di Maxwell facendo un analisi in frequenza.
 \begin{equation}
-\textbf{E}(\textbf{r}, t)= \textbf{E}(\textbf{r}) e^{-i \omega t}
+\textbf{E}(\textbf{r}, t)= \textbf{E}( \textbf{r} ) e^{-i \omega t}
 \end{equation}
 
 \begin{equation}
-\nabla^2 \textbf{E} (\textbf{r}) + \left(\frac{\omega}{c}\right)^2 \frac{2}{\varepsilon} \textbf{E} (\textbf{r})=0
+\nabla ^{2}\textbf{E} (\textbf{r}) + (\frac{\omega}{c})^{2}\frac{2}{\varepsilon}\textbf{E} (\textbf{r})=0
 \end{equation}
 
-\textbf{Si potrebbe risolvere l'equazione di Helmholtz con le appropriate condizioni al contorno, ma non è facile quindi si deve cercare una seconda via.}
+\textbf{Si potrebbe risolvere l'equazione di Helmotz con le appropiate condizioni al contorno, ma non è facile quindi si deve cercare una seconda via.}
 
 Analizziamo ad esempio un fronte d'onda piana che si propaga attraverso un apertura:
 
 %immagine%
- se usassimo ancora l'ottica geometrica troveremmo che passano solo i raggi centrali mentre gli altri no.
+ se usassimo ancora l'ottica geometrica troveremmo che passano solo i raggi centrali mrntre gli altri no.
 
 
-Se l'apertura è molto grande rispetto alla lunghezza d'onda le deflessioni sono meno evidenti e il fronte d'onda è ancora praticamente piano. se però riduciamo l'apertura questa approssimazione non è più accettabile.
+Se l'apertura è molto grande rispetto alla lunghezza d'onda le deflesioni sono meno evidenti e il fronte d'onda è ancora praticamente piano. se però riduciamo l'apertura questa approssimazione non è più accettabile.
 
-Andremo a studiare il sistema per aperture abbastanza piccole da avere diffrazione evidente, ma sufficientemente grande da non variare la polarizzazione del campo entrante lasciando l'equazione di Helmholtz scalare(NON FARLA DIVENTARE VETTORIALE)
+Andremo a studiare il sistema per aperture abbastanza piccole da avere diffrazione evidente, ma sufficentemente grande da non variare la polarizzazione del campo entrante lasciando l'equazione di Helmotz scalare(NON FARLA DIVENTARE VETTORIALE)
 
-\section*{Ottica Rifrattiva in Regime Scalare}
-Ipotizziamo di essere nel vuoto:
+\section{OTTICA DIFFRATTIVA IN REGIME SCALARE}
+
+ipotizziamo di essere nel vuoto 
 \begin{equation}
-\varepsilon = \varepsilon_0
+\varepsilon = \varepsilon 	_{0}
 \end{equation}
-chiamo il campo elettrico U(P) anziché \textbf{E} (\textbf{r}) 		(Metto in evidenza il fatto di essere scalare)
+chiamo il campo elettrico U(P) anzichè \textbf{E} (\textbf{r}) 		(Metto in evidenza il fatto di essere scalare)
 
 \begin{equation}
-\nabla^2 U(P) + \left(\frac{\omega}{c}\right)^2 \frac{2}{\varepsilon _0}U(P)=0
+\nabla ^{2}U(P) + (\frac{\omega}{c})^{2}\frac{2}{\varepsilon _{0}}U(P)=0
 \end{equation}
 
 Nell'ottica diffrattiva studiamo tutto ciò che ha dimensione finita 
@@ -53,28 +54,650 @@ Nell'ottica diffrattiva studiamo tutto ciò che ha dimensione finita
 
 prendiamo un sistema con apertura di forma non definita attraverso la quale passa un onda polarizzata linearmente: come sarà il campo dopo l'apertura?
 
-\textbf{Devo risolvere l'equazione di Helmholtz con le apposite condizioni al contorno. dovrò quindi usare le funzioni di Green} 
+\textbf{DEvo risolvere l'equazione di Helmotz con le apposite condizioni al contorno. dovrò quindi usare le funzioni di Grenn} 
 
 %cenni sulle funzioni di green%
 
 
-a formulare la seguente equazione son Kirchhoff, Rayleigh, Sommerfeld
+a formulare la seguente equazione son kirchoff, Raleigh, Sommerfild
 
 \begin{equation}
-U(P_0) = \frac{1}{i\lambda} \iint_\sigma U(P_1) \frac{e^{i k r_{01}}}{r_{01}} \cos(\textbf{n}, \textbf{r}) dS
+U(P_{0}) = \frac{1}{i\lambda} \iint_\sigma U(P_{1}) \frac{e^{i k r_{01}}}{r_{01}} cos(\textbf{n} , \textbf{ r})dS
 \end{equation}
 
 %r dovrebbe avere il pecide 01 ma caffacnuclo%
 \begin{equation}
-k = \frac{\omega}{c}  = \frac{2\pi}{\lambda}
+k=\frac{\omega}{c}  = \frac{2\pi}{\lambda}
 \end{equation}
 
-Esiste una strada alternativa che risulta solo dopo avere visto la soluzione di Rayleigh-Sommerfeld: \textbf{da un punto di vista matematico ci accorgiamo di avere in mano delle onde sferiche}
+Esiste una strada alternativa che risulta solo dopo avere vissto la soluzione di RAleigh Sommerfild: \textbf{da un punto di vista matematico ci accorgiamo di avere in mano delle onde sferiche}
 
 Si tratta di un potente artificio matematico che scompone il campo nella sovrapposizione di tante funzioni elementari.
 
 Scriveremo il campo di partenza come somma di un set di onde semplici la cui sovrapposizione alla fine ci garantisce di trovare il campo complessivo
 
+ 
+è possibile trovare un altro set di funzioni semplici che ci risolvano il problema.
+
+\subsection{TRASFORMATA DI FOURIER}
+
+	
+
+\begin{equation}
+g(t) \longrightarrow\mathscr{F} 	 \{g(t)\} =\int_{\infty}^{\infty} g(t) e^{-i\omega t}dt =G(\omega)
+\end{equation}
 
 
+	
+\begin{equation}
+g(t)= \mathscr{F}^{-1} 	 \{G(\omega)\} =\frac{1}{2\pi}\int_{\infty}^{\infty} G(\omega) e^{i\omega t}d\omega
+\end{equation}
+Formiamo la g(t) come sovrapposizione di funzioni seno e coseno
+
+Possiamo andare e applicare lo stesso concetto su delle variabili spaziali utilizzando un \textbf{TDF spaziale} 
+
+
+\begin{equation}
+g(x,y) \longrightarrow\mathscr{F} 	 \{g(x,y)\} =\iint_{\infty}^{\infty} g(x,y) e^{-i( k_{x} x +k_{y} y)}dxdy =G(k_{x}, k_{y})
+\end{equation}
+
+
+\textbf{ SPIEGARE MEGLIO TDF SPAZIALE}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\href{https://www.youtube.com/watch?v=y5zQTmkY7GI}{Video spiegazione}.  %<--------------------------------%
+
+
+
+
+
+
+
+
+
+
+
+L'equazione ci ricava la parte spaziale di un \textbf{onda piana} che si propaga nello spazio con $k_{x},k_{y},k_{z} $a z=0
+
+Vediamo quindi g(x,y) come il campo non più generico ma in corrispondenza dell'apertura
+
+A è la trasformata del campo U(x,y), quindi
+
+\begin{equation}
+U(x,y)=\frac{1}{(2\pi)^{2}}\iint_{\infty}^{\infty} A(k_{x},k_{y}) e^{i( k_{x} x +k_{y} y +k_{z} z)}dk_{x}dk_{y} 		
+\end{equation}
+z=0
+
+Abbiamo un onda elettromagnetica piana ($ e^{i \textbf{k} \textbf{r}}$) ovviamente  $k ^{2} = k_{x} ^{2} +k_{y} ^{2} +k_{z}^{2} \longrightarrow k_{z}=\sqrt{k ^{2} - k_{x} ^{2} - k_{y} ^{2}}$ 
+
+
+Il campo nell'apertura è visualizzabile come sovrapposizione di onde piane in partenza da z=0
+
+Sappiamo che l'equazione di Helmotz è lineare, quindi, sapendo come questa onda si propaga, possiamo trovare il campo ad ogni z lasciando propagare le onde piane e troviamo nuovamente la sovrapposizione a z scelto
+
+
+\begin{equation}
+U(x_{0},y_{0})=\frac{1}{(2\pi)^{2}}\iint_{\infty}^{\infty} A(k_{x},k_{y} ) e^{i( k_{x} x_{0} +k_{y} y_{0} +k_{z} z)}dk_{x}dk_{y} 				
+\end{equation}
+
+
+\textbf{La sorgente non viene più vista come sorgente di onde sferiche ma di onde piane}
+
+
+In termini matematici onde sferiche $\longrightarrow$ cos()
+
+ onde piane $\longrightarrow  e^{i \textbf{r} \textbf{k}}$
+ 
+Facendo la trasformata di Fourier trovo $A(k_{x},k_{y})$ che sarà lo \textbf{spettro angolare delle onde piane}
+
+\textbf{spiegare che diamine è lo spettro angolare}
+
+Possiamo però vedere $U(x_{0},y_{0})$ come $U(x_{0},y_{0})=\mathscr{F}^{-1} \{ A(k_{x},k_{y}) e^{i k_{z} z} \}$ 
+\textbf{COSA KZ FA NON HO CAPITO}
+Ma anche $k_{z}$ è funzione di $k_{x}, k{y}$ e può essere visto come lo spettro angolare di $U(x_{0},y_{0})$
+
+$k_{z}=\sqrt{k ^{2} - k_{x} ^{2} - k_{y} ^{2}}$
+
+$ A_{0}(k_{x},k_{y})=A_{1}(k_{x},k_{y}) e^{i k_{z} z} = A_{1}(k_{x},k_{y}) e^{i k \sqrt{1 - \frac{ k_{x} ^{2} + k_{y} ^{2}}{k^{2}}} z} $
+
+il pedici 1 si riferisce allo spettro iniziale, 0 a quello finale
+
+Lo spettro angolare è uguale a quello di partenza, moltiplicato per un termine di sfasamento.
+
+Ipotizziamo di essere in \textbf{OTTICA DIFFRATTIVA IN REGIME PARASSIALE}
+
+\textbf{DEFINIRE OTTICA DIFFRATTIVA IN REGIME PARASSIALE }
+
+$k_{x},k_{y} << k^{2}$
+per Taylor quindi
+$k \sqrt{1 - \frac{ k_{x} ^{2} + k_{y} ^{2} }{ k^{2} }}\approx k -\frac{1}{2} \frac{k_{x} ^{2} + k_{y} ^{2}}{k}$
+
+Possiamo vedere il termine $ e^{- i \frac{k_{x} ^{2} + k_{y} ^{2} }{2k}} z$ come un filtro in frequenza 
+
+\textbf{cosa cazzo è un filtro in frequenza?!??????????????????}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\href{https://www.youtube.com/watch?v=wZZ7oFKsKzY&t=235s}{Video spiegazione }.  %<--------------------------------%
+
+
+
+
+
+
+
+
+
+
+
+\subsection{EQUIVALENZA TRA LE DUE FORMULAZIONI}
+Formulazione onde piane(1):
+\begin{equation}
+U(x_{0},y_{0})=\frac{1}{(2\pi)^{2}}\iint_{\infty}^{\infty} A(k_{x},k_{y} ) e^{i( k_{x} x_{0} +k_{y} y_{0} +k_{z} z)}dk_{x}dk_{y} 				
+\end{equation}
+
+Formulazione onde sferiche(2):
+\begin{equation}
+U(P_{0}) = \frac{1}{i\lambda} \iint_\sigma U(P_{1}) \frac{e^{i k r_{01}}}{r_{01}} cos(\textbf{n} , \textbf{ r})dS
+\end{equation}
+
+Approssimazioni di (1): 
+
+- regime parassiale
+$k_{x},k_{y} << k^{2}$
+per Taylor quindi
+$k \sqrt{1 - \frac{ k_{x} ^{2} + k_{y} ^{2} }{ k^{2} }}\approx k -\frac{1}{2} \frac{k_{x} ^{2} + k_{y} ^{2}}{k}$
+
+\begin{equation}
+U(x_{0},y_{0})=\frac{1}{(2\pi)^{2}}\iint_{\infty}^{\infty} A(k_{x},k_{y} )  e^{i k z} e^{- i \frac{k_{x}^{2} k_{y}^{2}}{2k} z} e^{i( k_{x} x_{0} +k_{y} y_{0} )} dk_{x}dk_{y} 				
+\end{equation}
+
+NOTO CHE È IL PRODOTTO DI DUE TRASFORMATE DI FOURIER QUINDI 
+
+\begin{equation}
+\mathscr{F} 	 \{g(t) f(t)\}= G(\omega) * F(\omega)
+\end{equation}
+\textbf{ma vale anche l'inverso applicabile a questo caso }
+
+\begin{equation}
+\mathscr{F}^{-1} 	 \{g(t) f(t)\}= G(\omega) * F(\omega)
+\end{equation}
+
+\begin{equation}
+A(k_{x}, k_{y})\longrightarrow{\mathscr{F}^{-1} } U(x, y)
+\end{equation}
+
+\begin{equation}
+e^{i k z} e^{- i \frac{k_{x}^{2} k_{y}^{2}}{2k} z}\longrightarrow[\mathscr{F}^{-1} ]  \frac{1}{i \lambda z} e^{i k z} e^{i \frac{k}{2z} (x^{2}+ y^{2})}
+\end{equation}
+
+e il prodotto di convoluzione sarà quindi
+
+\textbf{io mi sono fidato}
+
+\textbf{spiegare meglio il passaggio}
+
+\begin{equation}
+U(x_{0}, y_{0})= \frac{1}{i \lambda z} e^{i k z}  \iint_{\infty}^{\infty} U(x_{1}, y_{1}) e^{\frac{k}{2z} [(x_{0}- x_{1})^{2} + (y_{0}- y_{1})^{2}]}dx_{1}dy_{1}
+\end{equation}
+
+e in regime parassiale (\textbf{e approssimazione di FRaunhofer?????}) sarà possibile applicare le seuenti approssimazioni:
+\begin{equation}
+r_{01} = \sqrt{(x_{0} - x_{1})^{2} + (y_{0}- y_{1})^{2} + z^{2}} = z \sqrt{\frac{(x_{0} - x_{1})^{2} + (y_{0}- y_{1})^{2}}{z^{2}} + 1} \approx z ( 1 + \frac{(x_{0} - x_{1})^{2} + (y_{0}- y_{1})^{2}}{2 z^{2}})
+\end{equation}
+cos(\textbf{n} , \textbf{ r})  = 1 
+
+e quindi (2) potrà essere scritta come
+
+\begin{equation}
+U(x_{0}, y_{0})= \frac{1}{i \lambda z} e^{i k z}  \iint_{\infty}^{\infty} U(x_{1}, y_{1}) e^{\frac{k}{2z} [(x_{0}- x_{1})^{2} + (y_{0}- y_{1})^{2}]}dx_{1}dy_{1}
+\end{equation}
+
+identica a (1) quindi cvd
+\textbf{IL QUADRATINO !!!!!!!!!!!!!!}
+
+\textbf{Il campo nel piano d'arrivo è dato da un integrale che può essere visto come la trasformata di Fourier del campo sull'apertura}
+
+Se non ci fosse il termine quadratico all'interno dell'integrale l'intensità del campo sul piano d'arrivo, proporzionale al modulo quadro del campo, sarebbe uguale al modulo quadro della trasformata di fourier nell'apertura
+
+\textbf{SPIEGARE MEGLIO DA COSA LO DEDUCO E L'APPORSSIMAZIONE DI FRAUNHOFER}
+
+
+Sviluppo il quadrato nel'equazione (20) e trovo:
+
+\begin{equation}
+U(x_{0}, y_{0})= \frac{1}{i \lambda z} e^{i k z} e^{i \frac{k (x_{0} ^ {2} + y_{0}^{2})}{2 z}}  \iint_{\infty}^{\infty} U(x_{1}, y_{1}) e^{i \frac{k (x_{0} x_{1} + y_{0} y_{1})}{z} }  e^{i \frac{k ( x_{1}^{2}  +  y_{1}^{2} ) }{2z} } dx_{1}dy_{1}
+\end{equation}
+
+
+\begin{equation}
+e^{i \frac{k ( x_{1}^{2}  +  y_{1}^{2} ) }{2z}}
+\end{equation}
+
+
+$\frac{k x_{0}}{z}$ e $\frac{k y_{0}}{z}$ pulsazione spaziale
+
+
+\textbf{parlare della frequenza spaziale}
+$f_{x} = \frac{x_{0}}{\lambda z} $
+
+$f_{y} = \frac{y_{0}}{\lambda z} $
+
+$k_{x} = 2 \pi f_{x}$
+
+$k_{y} = 2 \pi f_{y}$
+\begin{equation}
+e^{i \frac{k (x_{0} x_{1} + y_{0} y_{1})}{z} } = e^{i (2 \pi f_{x} x_{1} + 2 \pi f_{y} y_{1}) } = e^{i (k_{x} x_{1} + k_{y} y_{1}) }
+\end{equation}
+
+
+se andassimo a grande distanza dall'apertura questo termine quadratico è trascurabile. questa è l \textbf{approssimazione di Fraunhofer}
+
+\begin{equation}
+I(x_{0}, y_{0}) = |\iint_{\infty}^{\infty} U(x_{1}, y_{1}) e^{-\frac{k}{2z} [x_{0} x_{1} + y_{0} y_{1}]}dx_{1}dy_{1}|^{2} = \norm{U(x_{1}, y_{1}) e^{-\frac{k}{2z} [x_{0} x_{1} + y_{0} y_{1}]}} ^{2}
+\end{equation}
+
+
+Sul piano di arrivo ho la trasformata di Fourier dell $U(x_{1}, y_{1})$ moltiplicata per l'espondenziale seguente 
+
+\textbf{non ho mica capito}
+
+Posso associare allo spazio una coppia di frequenze che mi danno la mappa spettrale del campo
+
+È quindi possibile associare alla coppia di assi $(x_{0}, y_{0})$ la coppia $(f_{x}, f_{y})$ che corrispondono allo specchio in frequenza 
+
+-L'ottica diffrattiva in regime parassiale è in grado di fare un operazione matematica: la trasformata di Fourier bidimensionale(va riscritta meglio)
+
+se faccio il modulo quadro della funzione d'arrivo trovo lo spettro in potenza
+
+Se andiamo a grande distanza dalla fenditura(approssimazione di Fraunhofer) andiamo a studiare la propagazione del campo come composto da onde piane(stessa cosa per la soluzione di Raleigh Sommerfield)
+
+A grande distanza la soluzione sarà
+
+\begin{equation}
+U(x_{0}, y_{0})= \frac{1}{i \lambda z} e^{i k z} e^{i \frac{k (x_{0} ^ {2} + y_{0}^{2})}{2 z}}  \iint_{\infty}^{\infty} U(x_{1}, y_{1}) e^{i (k_{x} x_{1} + k_{y} y_{1}) } dx_{1}dy_{1}
+\end{equation}
+
+e l'intensità sarà quindi:
+
+\begin{equation}
+I(x_{0}, y_{0})=|U(x_{0}, y_{0})|^{2}= \frac{|\mathscr{F} \{ U(x_{1},y_{1})\}|^{2}}{\lambda^{2} z^{2}}
+\end{equation}
+
+%\subsection{esempi}%
+
+%non lo copio perchè sono TDF banali!%
+
+
+poniamo $t(x_{1}, y_{1}) =U(x_{1}, y_{1})$
+
+e ipotizziamo il caso di un apertura dentro la quale c'è un reticolo di trasmissione che varia come un cos
+\begin{equation}
+t(x_{1}, y_{1}) = [\frac{1}{2} + \frac{m}{2} cos(2 \pi f_{0} x_{1})] rect(\frac{x_{1}}{l_{x}}) rect(\frac{y_{1}}{l_{y}})
+\end{equation}
+
+$a = [\frac{1}{2} + \frac{m}{2} cos(2 \pi f_{0} x_{1})]$ è dovuto al reticolo di trasmissione 
+
+$b = rect(\frac{x_{1}}{l_{x}}) rect(\frac{y_{1}}{l_{y}})$ all'apertura, in questo caso rettangolare di lato $l_{x} l_{y}$ 
+\begin{equation}
+\mathscr{F} \{ t(x_{1},y_{1})\} = \mathscr{F} \{ a\} * \mathscr{F} \{b\}
+\end{equation}
+
+
+\begin{equation}
+\mathscr{F} \{ a\} = \frac{1}{2} \delta(f_{x}, f_{y}) + \frac{m}{4} \delta(f_{x} + f_{0}, f_{y}) + \frac{m}{4} \delta(f_{x} - f_{0}, f_{y})
+\end{equation}
+
+ipotizzo $l=l_{x}=l_{y}$
+\begin{equation}
+\mathscr{F} \{ b\} = l^{2} sinc(l f_{x}) sinc(l f_{y})
+\end{equation}
+dovrò quindi trovare il prodotto di convoluzione dei due
+
+
+
+Si ricorda che fare il prodotto di convoluzione con una delta di dirac ad una certa frequenza significa traslare la funzione a tale di tale frequenza
+
+\begin{equation}
+\mathscr{F} \{ t(x_{1},y_{1})\} = l^{2} sinc(l f_{y}) \{		sinc(l f_{y}) +  \frac{m}{2} sinc(l (f_{x} + f_{0}))	+  \frac{m}{2} sinc(l (f_{x} - f_{0}))\}
+\end{equation}
+
+
+Facendo il modulo quadro trovo come scritto sopra l'intensità del campo. Noto che se $f_{0}$ è grande \textbf{ i doppi prodotti non si sovrappongono???????} e possono essere trascurati
+
+$f_{0}>>1$
+\begin{equation}
+I(x_{0},y_{0}) = (	\frac{l^{2}}{2 \lambda z}	)^{2}	sinc^{2}(\frac{l y_{0}}{ \lambda z}	)\{		sinc^{2}(\frac{l x_{0}}{ \lambda z}	)	+ \frac{m^{2}}{4} sinc^{2}(\frac{l (x_{0} + f_{0}) \lambda z}{ \lambda z}	)		+ \frac{m^{2}}{4} sinc^{2}(\frac{l (x_{0} - f_{0}) \lambda z}{ \lambda z}	)	\}
+\end{equation} 
+
+
+il numero di fenduiture è legato a $x_{0}$ la profondità a è legata a m(\textbf{cosa vuole dire????})
+
+ricordando(\textbf{che non ho scritto}) che l'apertura del lato centrale è 
+$\Delta x_{0}= \frac{2 \lambda z}{l}$ 
+
+troviamo affinchè tali lobi siano separati \textbf{?????}  (e quindi si possano trascurare i doppi prodotti) si deve avere $f_{0} \lambda z >\Delta x_{0} $ e quindi $f_{0}>\frac{2}{l}$
+
+Cosa vedo sul piano di Fraunhofer?
+
+vedo quindi un reticolo di diffrazione 
+
+È possibile ad una distanza ragionevole? Dalla distanza di Fraunhofer a una distanza praticabile?
+
+Forse si ma è necessario servirsi delle lenti
+
+Innanzitutto immaginiamo una \textbf{lente più grande del fronte d'onda incidente}
+
+l'unica azione che la lent può compiere sull'onda è sfasarla attraverso il passaggio nel materiale dielettrico e nell'aria
+
+$\Delta (x, y) $= cammino interno
+
+$\Delta_{0} - \Delta (x, y) $= cammino nell'aria
+\begin{equation}
+\Phi (x, y) = k n \Delta (x, y) + k [\Delta_{0} - \Delta (x, y)] = k \Delta_{0} + k \Delta (x,y) (n-1)
+\end{equation}
+
+$U_{l}'=U_{l} t(x,y) $
+
+con t(x, y) funzione di trasferimento della lente 
+
+$t(x,y) = e^{i \Phi (x,y)} = e^{i k \Delta_{0} + k \Delta (x,y) (n-1)}$
+
+$U_{l}'=U_{l} e^{i k \Delta_{0}} e^{i k \Delta (x,y) (n-1)} $
+
+ora dobbiamo determinare lo spessore della lente $\Delta (x,y)$ che dipende dai raggi di curvatura In approssimazione parassiale
+
+$\Delta(x,y) = \Delta_{0} - \frac{x^{2}+ y^{2}}{2}  (\frac{1}{R_{1}} -\frac{1}{R_{2}} )$
+
+La focale della lente è 
+$\frac{1}{f} = (n-1)(\frac{1}{R_{1}} -\frac{1}{R_{2}} )$
+
+\begin{equation}
+U_{l}'=U_{l} e^{i k n \Delta_{0}} e^{- i k \frac{x^{2}+ y^{2}}{2 f} } 
+\end{equation}
+
+mettiamo la lente in corrispondenza con l'apertura in modotale che le sue coordinate coincidano con quelle dell'apertura 
+
+momentaneamente tralasciamo il termine costante $e^{i k n \Delta_{0}}$ si ricongiungerà alla fine con il resto dell'equazione %in realtà l'abbiamo rapito%
+
+inseriamo ciò che abbiamo trovato ora nell'equazione (21)
+
+$
+U(x_{0}, y_{0})= \frac{1}{i \lambda z} e^{i k z}  \iint_{\infty}^{\infty} U(x_{1}, y_{1}) e^{\frac{k}{2z} [(x_{0}- x_{1})^{2} + (y_{0}- y_{1})^{2}]}dx_{1}dy_{1}
+$
+
+\begin{equation}
+U(x_{0}, y_{0})= \frac{1}{i \lambda z} e^{i k z}  \iint_{\infty}^{\infty} U_{l}  e^{- i k \frac{x^{2}+ y^{2}}{2 f} } e^{\frac{k}{2z} [(x_{0}- x_{1})^{2} + (y_{0}- y_{1})^{2}]}dx_{1}dy_{1}
+\end{equation}
+
+Ipotizzo f>0
+
+Se  ci poniamo a z = f i due esponenziali si semplificano
+
+ottengo
+
+\begin{equation}
+U(x_{f}, y_{f})= \frac{ e^{i k z}}{i \lambda z} e^{i \frac{k (x_{f}^{2} + y_{f}^{2})}{2f}} \iint_{\infty}^{\infty} U_{l}  e^{-i 		\frac{2\pi (x_{f} x + y_{f} y)}{\lambda f}		}dxdy
+\end{equation}
+
+
+indico con $f_{x} = \frac{x_{f}}{\lambda}$ e $f_{y} = \frac{y_{f}}{\lambda}$
+
+
+\textbf{ottengo quindi la stessa trasformata che prima trovavo nella regione di FRaunhofer ora in corrispondenza del fuoco della lente}
+
+\begin{equation}
+U(x_{f}, y_{f}) =  \frac{ e^{i k z}}{i \lambda z} e^{i \frac{k (x_{f}^{2} + y_{f}^{2})}{2f}} \mathscr{F} \{	U_{l}(x,y)	\} ( f_{x}, f_{y})
+\end{equation}
+
+
+Le lenti convergenti avvicinano la lunghezza di Fraunhofer a piccole distanze
+
+Vogliamo però la trasformata di Fourier esatta  e quindi lo spettro nel caso che tra l'apertura e la lente ci sia una certa distanza $d_{0}$
+
+
+
+definisco ora:
+
+$\mathscr{F} \{	U_{0}(x,y)	\} ( f_{x}, f_{y})  = F_{0}(f_{x}, f_{y})$
+
+che mi rappresenta lo spettro dell'onda piana di partenza
+
+Restando nel dominio di Fourier siamo in grado di trovare la trasformata in corrispondenza della lente dopo un tratto $d_{0}$ di propagazione libera
+\textbf{DOVE CAZZZO LO TROVO QUESTA COSA QUI????}
+
+$	\mathscr{F} \{	U_{l}(x,y)	\} ( f_{x}, f_{y}) 	F_{l}(f_{x}, f_{y}) = F_{0}(f_{x}, f_{y}) 	e^{		-i \frac{  k_{x}^{2} +  k_{y}^{2}}{2 k}	d_{0}} = F_{0}(f_{x}, f_{y}) 	e^{		-i \frac{ 4 \pi ^{2}}{2}     \frac{\lambda}{ 2 \pi}    (  f_{x}^{2} +  f_{y}^{2})	d_{0}}$
+
+e la sostituisco nell equazione (38) 
+
+\begin{equation}
+U_{f}(x_{f}, y_{f}) = \frac{       i \frac{k}{2 f} (     1- \frac{d_{0}}{f}  )(x_{f}^{2}+ y_{f}^{2})               }{i \lambda f} F_{0}(\frac{x_{f}}{\lambda_{f}}, \frac{y_{f}}{\lambda_{f}})
+\end{equation}
+
+
+nel caso particolare $d_{0}=f$
+
+\begin{equation}
+U_{f}(x_{f}, y_{f})=\frac{1}{ i \lambda f} F_{0}(\frac{x_{f}}{\lambda_{f}}, \frac{y_{f}}{\lambda_{f}})
+\end{equation}
+
+Significa che il termine quadratico che nasce dalla propagazione libera viene eliminato dalla presenza della lente a distanza $d_{0}$
+
+
+
+
+\subsection{elaborazione otticadel segnale}
+
+\textbf{NON HO CAPITO TROPPO BENE SPIEGARE MEGLIO}
+
+\textbf{SERVE IL DISEGNO QUI!!!}
+
+
+
+$\mathscr{F} \{ g(t)\}= G(f)$
+
+$\mathscr{F} \{h(t)\}  = H(f)$
+
+fequenza (\textbf{in che senso????})  G(f)H(f)
+
+tempi $     \int_{t}^{-\infty}      g(\tau) h(t- \tau) d\tau         $
+
+
+ \textbf{h(x,y) funzione di trasferimento del sistema}
+ogliamo spostare l'analisi in frequenza in analisi spaziale 
+
+Se anzichè g(t) in ingresso avessi una $\delta $ il sistema mi restituirebbe la stessa funzione h(t) 
+
+una $\delta$ fisicamente sarebbe una sorgente puntiforme che attraversa il sistema ottico mi da h(x,y)
+
+se nel piano dell'origine ho una distribuzione di campo estesa posso scomporla in tante sorgenti puntiformi in modo da avere nel piano d'arrivo la sovrapposizione delle funzioni h(x,y) prodott del sistema, traslata approssimativamete in base alla posizione della sorgente 
+
+il risultato sarà quindi un prodotto di convoluzione 
+
+\begin{equation}
+\int_{\infty}^{-\infty} g(x_{1}, y_{1})h(x-x_{1}, y-y_{1})dx_{1} dy_{1}
+\end{equation}
+
+Circuito ottico e elettrico sono quindi equivalenti(????????) tuttavia come si fa a produrre un sistema ottico che possa lavorare sul segnale?
+
+Si passa alle frequenze per poi antitrasfromare
+
+in ogni punto NON sappiamo quale è il contributo di ogni frequenza spaziale 
+
+possiamo porre una siapositiva opaca con alcuni punti trasparenti.
+Passeranno solo determinate??????????????????? frequenze spaziali 
+ e il raggio sarà monocromatico
+ 
+ ottengo così un nuovo spettro che possiamo ritrasformare
+ 
+-------------BHO-------------------
+
+
+
+
+\href{https://www.youtube.com/watch?v=F-S0T4xTdLY}{Video spiegazione }.  %<--------------------------------%
+
+
+Se il sistema ottico ha un apertura abbastanza grande, l'ottica geometrica funziona bene. L'ottica diffrattiva interviene quando le dimensioni dell'apertura (sono paragonabili con la lunghezza d'onda?????) hanno effetti diffrattivi rilevanti nel sistema
+
+siano $(x_{0}, y_{0})$  le coordinate dell'oggetto e $U_{0}(x_{0}, y_{0})$ il relativo campo elettromagnetico che viene trasformato fino ad arrivare al piano immagine del campo $U_{i}(x_{i}, y_{i})$. la relazione tra ingresso e uscita è lineare(essendo l'equazione di Helmotz lineare) 
+
+\begin{equation}
+U_{i}(x_{i}, y_{i})=\int_{-\infty}^{+\infty} U_{0}(x_{0}, y_{0})h(x_{i}, y_{i} ;x_{0},y_{0})dx_{0} dy_{0}
+\end{equation}
+
+CHE NOTAZIONE HA h????????????????????????????'
+
+
+Dove h() funzione di trasferimento del sistema che può essere spazialmente invariante(in regime parassiale lo è, ma non in generale)
+
+COSA VUOLE DIRE SPAZIALMENTE INVARIANTE????
+
+
+Se nel piano immagine abbiamo la riproduzione perfetta dell'oggetto la funzione h dovrà essere proporzionale a una $\delta$ 
+
+\begin{equation}
+h \propto \delta(x_{i} \pm M x_{0}, y_{i} \pm M y_{0})
+\end{equation}
+
+
+Se scomponiamo $U_{0}(x_{0}, y_{0})$ in tante sorgenti puntiformi l'integrale di sovrapposizione sarà un altro punto luminoso la cui posizone dipendereà da h(M) (dovrebbe essere traslato no?)
+
+Quando la risposta del sistea non è una $\delta$ (quindi tutti i casi reali)  spazio invariante non ho più la perfetta riproduzione dell'immagine
+
+Se l'apertura ha dimensioni finite troncherà il fronte d'onda dando origine a effetti di DIFFRAZIONE
+
+La funzione P(x,y) è detta pupilla della lente 
+
+
+$$
+P(x,y) =
+\begin{cases}
+1 $ dove la lente lascia passare la luce$ \\
+0 $ altrove$\\
+
+\end{cases}
+$$
+
+
+Scomponiamo il campo in ingresso in varie sorgenti puntiformi di onde sferiche che sarà possibile sovrapporre per formare il campo in uscita
+
+La risposta del sistema ottico e un punto sorgente mi da la funzione che l'onda sferica che parte dalla sorgente puntiforme che stiamo considerando il suo andamento di fase
+
+$\frac{e^{i k r}}{ i \lambda r}$
+
+Siamo in ottica parassiale 
+
+\begin{equation}
+r \approx [1 + \frac{1}{2} (\frac{x - x_{0}}{z})^{2}+ \frac{1}{2} (\frac{y - y_{0}}{z})^{2}]
+\end{equation}
+
+Il campo che mi arriva sulla lente sarà ($ r \approx z = d_{0}$)
+
+
+
+
+
+\begin{equation}
+U_{l}(x,y) =\frac{1}{i \lambda d_{0}} e^{i \frac{k}{2 d_{0}}  [(x-x_{0})^{2} +(y-y_{0})^{2}]}
+\end{equation}
+
+il campo dopo la lente sarà moltiplicato per le funzioni di trasmissione della lente composto dalla pupilla e dal termine di fase (ipotizzando sempre che la lente f>0)
+
+\begin{equation}
+U_{l}' (x,y)=U_{l}(x,y) P(x,y) e^{-i \frac{k}{2f}(x^{2}+y^{2})}
+\end{equation}
+
+per arrivare al piano $(x_{i}, y_{i})$ abbiamo un tratto z=$d_{0}$ di propagazione libera che andiamo a studiare con l'integrale di Fresnel
+
+\begin{equation}
+h(x_{i}, y_{i}; x_{0}, y_{0})= \frac{1}{ i \lambda d_{i}} \iint_{-\infty}^{\infty} U_{l}' (x,y) e^{i \frac{k}{2 d_{i}}[(x-x_{0})^{2} +(y-y_{0})^{2}]}dxdy
+\end{equation}
+
+
+sostituendo troviamo la funzione h
+
+\begin{equation}
+h= \frac{1}{\lambda^{2} d_{0} d_{i}} e ^{i \frac{k}{2 d_{i}}(x_{i}^{2}+y_{i}^{2})} e ^{i \frac{k}{2 d_{0}}(x_{0}^{2}+y_{}^{2})} \iint_{-\infty}^{\infty} P(x,y) e^{i \frac{k}{2}  (\frac{1}{d_{0}} + \frac{1}{d_{1}} - \frac{1}{f})(x^{2}+y^{2}) } e^{- i k [(\frac{x_{0}}{d_{0}} + \frac{x_{1}}{d_{1}} ) x + (\frac{y_{0}}{d_{0}} + \frac{y_{1}}{d_{1}} ) y]} dxdy
+\end{equation}
+
+
+per una ragione che non mi è facile comprendere 
+
+$\frac{1}{d_{0}}+ \frac{1}{d_{1}} - \frac{1}{f}$
+
+poniamo come condizione
+
+$M = \frac{d_{i}}{d_{0}}$
+
+\begin{equation}
+h= \frac{1}{\lambda^{2} d_{0} d_{i}} e ^{i \frac{k}{2 d_{i}}(x_{i}^{2}+y_{i}^{2})} e ^{i \frac{k}{2 d_{0}}(x_{0}^{2}+y_{}^{2})} \iint_{-\infty}^{\infty} P(x,y)  e^{- i k \frac{k}{d_{i}} [(M x_{0} + x_{i}) x + (M y_{0} + y_{i})y]} dxdy
+\end{equation}
+
+ricordando la (42)  e ricordando sempre che $ I \thicksim |U|$
+
+
+\textbf{in ottica diffrattiva un punto luminoso nel piano oggetto diventa una macchia nel piano immagine corrispondente alla trasformata di Fourier nell'apertura della lente la cui dimensione è inversamente proporzionale alla dimensione della pupilla}(più grande è la pupilla più piccolo sarà la macchia quindi l'immagine più chiara)
+
+
+A grandi linee è possibile approssimare :
+
+pupilla grande $\rightarrow \delta \rightarrow$ macchia puntiforme $\rightarrow$ ottica geometrica
+
+pupilla piccolo $\rightarrow$ macchi su tutto il piano immagine $\rightarrow$ ottica diffrattiva 
+
+\textbf{COME FACCIO A DIRE CHE È UN FILTRO??}
+La lente è quindi un filtro sulla frequenza spaziale del campo di partenza 
+
+l'effetto della pupilla in un sistema ottico in ottica diffrattiva è quello di un f\textbf{iltro passa basso per le frequenze spaziali} maggiori le dimensioni della pupilla più frequenze passano, più è precisa la riproduzione nel piano immagine
+
+Esempio: Telescopio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\href{https://www.youtube.com/watch?v=T8r3cWM4JII&t=47s}{Video spiegazione }.  %<--------------------------------%
+
+
+
+
+
+
+
+
+ 
 \end{document}
+
